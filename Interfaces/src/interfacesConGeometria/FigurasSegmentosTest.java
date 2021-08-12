@@ -73,5 +73,10 @@ public class FigurasSegmentosTest {
 		assertEquals(s1, s1Desplazado);
 
 	}
+	
+	@Test(expected=InvalidSegmentoException.class)
+	public void segmentosInvalidosTest() {
+		Segmento s = new Segmento(new Punto(1, 2), new Punto(1, 2));
+	}
 
 }

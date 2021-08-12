@@ -5,9 +5,13 @@ public class Segmento implements Comparable<Segmento>, Desplazable, EsParalelo {
 	private Punto puntoA;
 	private Punto puntoB;
 
-	public Segmento(Punto puntoA, Punto puntoB) {
-		this.puntoA = puntoA;
-		this.puntoB = puntoB;
+	public Segmento(Punto puntoA, Punto puntoB) throws InvalidSegmentoException{
+		if(puntoA.equals(puntoB))
+			throw new InvalidSegmentoException("Los extremos no pueden ser el mismo punto");
+		else{
+			this.puntoA = puntoA;
+			this.puntoB = puntoB;
+			}
 	}
 
 	public Double getLargo() {
