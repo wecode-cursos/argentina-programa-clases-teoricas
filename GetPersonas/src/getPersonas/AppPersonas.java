@@ -1,7 +1,9 @@
 package getPersonas;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 
@@ -10,17 +12,15 @@ public class AppPersonas {
 
 	public static void main(String[] args) throws IOException {
 
-		List<Persona> personas = LeerYescribirPersonas.getPersonas("personas.in");
+		List<Persona> personas = GestionarPersonas.getPersonas("personas.in");
 		
-		LeerYescribirPersonas.escribirMayoresDeEdadOrdenadasPorEdad(personas, 30);
+		GestionarPersonas.escribirMayoresDeEdadOrdenadasPorEdad(personas, 30);
 		
-		LeerYescribirPersonas.escribirMayoresDeEdadOrdenadasPorDNI(personas, 35);
+		GestionarPersonas.escribirMayoresDeEdadOrdenadasPorDNI(personas, 35);
 		
-		Scanner tcl = new Scanner(System.in);
-		
-		System.out.println("ingrese un entero");
-		int a = tcl.nextInt();
-		System.out.println(a);
+		Map<Integer, ArrayList<Persona>> personasPorEdad = GestionarPersonas.agruparPorEdad(personas);
+	
+		GestionarPersonas.escribirPersonasAgrupadasPorEdad(personasPorEdad,"agrupadasPorEdad.out");
 		
 		
 	}
