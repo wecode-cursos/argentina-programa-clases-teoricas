@@ -1,4 +1,3 @@
-BEGIN TRANSACTION;
 CREATE TABLE IF NOT EXISTS "cursos" (
 	"id_curso"	INTEGER NOT NULL,
 	"nombre"	TEXT NOT NULL,
@@ -338,4 +337,3 @@ INSERT INTO "estudiantes" VALUES (1,'Quiros','Débora','Araceli.Esparza60@hotmai
  (298,'Contreras','Luisa','Raquel.Palomino74@corpfolder.com','zBtOnFKNOyI8Dg4',4761,20),
  (299,'Cepeda','Sonia','MaraLuisa.Borrego@yahoo.com','_XWmPd9i2TplO1A',7677,12),
  (300,'Portillo','Juan Pablo','Elvira_Trrez@hotmail.com','KpXvqrLSxtGiKcL',9889,9);
-COMMIT;
