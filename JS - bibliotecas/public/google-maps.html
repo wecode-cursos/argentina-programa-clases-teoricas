@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Google maps</title>
+
+<style>
+#map {
+	height: 100%;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+</style>
+	<!--
+	
+		Para utilizarlo deben crear una google API Key
+		https://developers.google.com/maps/documentation/javascript/get-api-key
+	-->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap"
+      defer
+    ></script>
+
+<script>
+	// Documentación: https://developers.google.com/maps/documentation/javascript/overview
+
+	let map;
+
+	function initMap() {
+		// Mapa centrado en argentina
+		map = new google.maps.Map(document.getElementById("map"), {
+			center : {
+				lat : -40.5,
+				lng : -62
+			},
+			zoom : 5,
+		});
+	}
+</script>
+
+</head>
+<body>
+	<div id="map"></div>
+</body>
+</html>

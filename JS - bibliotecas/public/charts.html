@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Charts</title>
+
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/c3@0.7.20/c3.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/d3@5.16.0/dist/d3.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/c3@0.7.20/c3.min.js"></script>
+
+<script type="text/javascript">
+	// C3.js
+
+	// Para más ejemplos de uso y documentación
+	// https://c3js.org/examples.html
+	window.addEventListener('DOMContentLoaded', function() {
+		var chart = c3.generate({
+		    bindto: '#c3-chart',
+		    data: {
+		      columns: [
+		        ['data1', 30, 200, 100, 400, 150, 250],
+		        ['data2', 50, 20, 10, 40, 15, 25]
+		      ],
+		      axes: {
+		        data2: 'y2'
+		      },
+		      types: {
+		        data2: 'bar'
+		      }
+		    },
+		    axis: {
+		      y: {
+		        label: {
+		          text: 'Y Label',
+		          position: 'outer-middle'
+		        },
+		        tick: {
+		          format: d3.format("$,") // ADD
+		        }
+		      },
+		      y2: {
+		        show: true,
+		        label: {
+		          text: 'Y2 Label',
+		          position: 'outer-middle'
+		        }
+		      }
+		    }
+		});
+	});
+</script>
+
+<script type="text/javascript">
+	// chartjs
+	
+	// Para más ejemplos de uso y documentación
+	// https://www.chartjs.org/docs/latest/
+	window.addEventListener('DOMContentLoaded', function() {
+		// const ctx = document.querySelector('#chartjs').getContext('2d');
+		const ctx = document.getElementById('chartjs').getContext('2d');
+		const myChart = new Chart(ctx, {
+		    type: 'bar',
+		    data: {
+		        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+		        datasets: [{
+		            label: '# of Votes',
+		            data: [12, 19, 3, 5, 2, 3],
+		            backgroundColor: [
+		                'rgba(255, 99, 132, 0.2)',
+		                'rgba(54, 162, 235, 0.2)',
+		                'rgba(255, 206, 86, 0.2)',
+		                'rgba(75, 192, 192, 0.2)',
+		                'rgba(153, 102, 255, 0.2)',
+		                'rgba(255, 159, 64, 0.2)'
+		            ],
+		            borderColor: [
+		                'rgba(255, 99, 132, 1)',
+		                'rgba(54, 162, 235, 1)',
+		                'rgba(255, 206, 86, 1)',
+		                'rgba(75, 192, 192, 1)',
+		                'rgba(153, 102, 255, 1)',
+		                'rgba(255, 159, 64, 1)'
+		            ],
+		            borderWidth: 1
+		        }]
+		    },
+		    options: {
+		        scales: {
+		            y: {
+		                beginAtZero: true
+		            }
+		        }
+		    }
+		});
+	});
+</script>
+</head>
+<body>
+<h1>C3.js</h1>
+<div id="c3-chart"></div>
+
+<h1>Chartjs</h1>
+<canvas id="chartjs" width="400" height="400"></canvas>
+</body>
+</html>
