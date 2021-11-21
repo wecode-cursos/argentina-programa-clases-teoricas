@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Forms</title>
+</head>
+<body>
+	<form method="GET" action="https://postman-echo.com/get">
+		<h1>Input text</h1>
+		Texto: <input type="text" name="text" />
+		<br>
+		Password: <input type="password" name="password" />
+		<br>
+		Escondido: <input type="hidden" name="hidden" />
+		<br>
+		Número: <input type="number" name="number" />
+		<br>
+		Fecha: <input type="date" name="date" />
+		<br>
+		Textarea: <textarea rows="4" cols="60" name="textarea">
+			contenido
+		</textarea>
+
+
+		<h1>Input de selección</h1>
+		<label>
+			<input type="checkbox" name="checkbox[]" /> A
+		</label>
+		<label>
+			<input type="checkbox" name="checkbox[]" /> B
+		</label>
+		<label>
+			<input type="checkbox" name="checkbox[]" /> C
+		</label>
+		<br>
+		<br>
+		<label>
+			<input type="radio" /> mañana
+		</label>
+		<label>
+			<input type="radio" /> tarde
+		</label>
+		<label>
+			<input type="radio" /> noche
+		</label>
+		<br>
+		<br>
+		<label>
+			<input type="radio" name="radio" /> mañana
+		</label>
+		<label>
+			<input type="radio" name="radio" /> tarde
+		</label>
+		<label>
+			<input type="radio" name="radio" /> noche
+		</label>
+		<br>
+
+
+		<h1>Campos de dropdown</h1>
+		Selección: <select>
+			<option value="1">Uno</option>
+			<option value="2">Dos</option>
+			<option value="3">Tres</option>
+		</select>
+		<br>
+
+
+		<h1>Campos de botón</h1>
+		<input type="reset" value="Resetear" />
+		<input type="submit" value="Enviar" />
+		<br>
+	</form>
+</body>
+</html>
